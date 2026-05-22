@@ -2,6 +2,8 @@
 
 En este laboratorio vas a practicar la integración de una API externa en una aplicación React. El objetivo es mostrar el listado de personajes de Rick & Morty en la home page.
 
+**Demo de la solución:** https://frolicking-choux-2fae0a.netlify.app
+
 La aplicación ya tiene configurado el routing y una barra de navegación. Tu trabajo empieza aquí.
 
 ---
