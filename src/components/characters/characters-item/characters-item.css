@@ -1,0 +1,24 @@
+.CharactersItem {
+    flex: 0 0 calc(25% - 35px);
+    border: 1px solid #eee;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 4px 4px 0px 0px rgba(0,0,0,0.05);
+}
+
+.CharactersItem_ImageContainer {
+    display: block;
+    width: 100%;
+    aspect-ratio: 16/9;
+}
+
+.CharactersItem_ImageContainer img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.CharactersItem_InfoContainer {
+    padding: 15px;
+    box-sizing: border-box;
+}
