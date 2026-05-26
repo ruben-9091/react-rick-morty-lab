@@ -1,28 +1,27 @@
 import axios from "axios";
 
 const http = axios.create({
-    baseURL: "https://rickandmortyapi.com/api"
+  baseURL: "https://rickandmortyapi.com/api",
 });
-
-const BASE_URL = "https://rickandmortyapi.com/api/character/avatar/"
+const BASE_URL_IMG = "https://rickandmortyapi.com/api/character/avatar/";
 function parseCharacter(character) {
-    return {
-        id: character.id,
-        name: character.name,
-        image: `${BASE_URL}${character.id}.jpeg`,
-        status: character.status,
-        species: character.species  
-    }         
+  return {
+    id: character.id,
+    name: character.name,
+    image: `${BASE_URL_IMG}${character.id}.jpeg`,
+    status: character.status,
+    species: character.species,
+    gender: character.gender, 
+    origin: character.origin.name,
+  };
 }
 
 export async function listCharacters() {
-    const { data } = await http.get('/character')
-    return data.results?.map((character) => parseCharacter(character)) ?? [];
-};
+  const { data } = await http.get("/character");
+  return data.results?.map((character) => parseCharacter(character)) ?? [];
+}
 
-export async function detailCharacters({id}) {
+export async function getCharacter(id) {
     const { data } = await http.get(`/character/${id}`)
-    return data.results?.map((character) => parseCharacter(character)) ?? [];
+    return parseCharacter(data); 
 };
-
-//https://rickandmortyapi.com/api/character/{id}

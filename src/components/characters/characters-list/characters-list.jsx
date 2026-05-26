@@ -1,13 +1,8 @@
+import CharactersItem from "../characters-item/characters-item";
 import { useState, useEffect } from "react";
 import * as RMcharacters from "../../../services/rm-service";
-import CharactersItem from "../characters-item/characters-item";
-import "./characters-list.css";
 
-function getCharacter(id) {
-    
-}
-
-function CharactersList() {
+function CharacterList() {
   const [characters, setCharacters] = useState([]);
 
   useEffect(() => {
@@ -23,11 +18,12 @@ function CharactersList() {
   }, []);
 
   return (
-    <div className="CharactersList">
+    <div className="d-flex flex-wrap justify-content-center gap-3">
       {characters.map((character) => (
         <CharactersItem key={character.id} character={character} />
       ))}
     </div>
   );
 }
-export default CharactersList;
+export default CharacterList;
+
